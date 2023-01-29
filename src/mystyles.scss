@@ -6,23 +6,19 @@
 // Set your brand colors
 $teal: #099499;
 $purple: #841E67;
-$black: #111111;
-$grey-light: #96aaaa;
-$grey-lighter: #ceeaea;
-$white: #ffffff;
+$black-bis: hsl(0, 0%, 7%);
+$white-ter: hsl(0, 0%, 96%);
 
 // Update Bulma's global variables
 $family-sans-serif: "Urbanist", sans-serif;
-$grey-dark: $grey-light;
-$grey-light: $grey-lighter;
 $primary: $purple;
 $link: $teal;
-$text: $white;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
+$scheme-main: $black-bis;
+$scheme-invert: $white-ter;
 
 // Update some of Bulma's component variables
-$body-background-color: $black;
 $body-min-width: 100%;
 $control-border-width: 2px;
 $input-border-color: transparent;

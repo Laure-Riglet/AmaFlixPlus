@@ -14,13 +14,12 @@ body {
 		difference, normal;
 }
 
-#home nav,
-#home footer {
+#home nav {
 	background-color: hsla(0, 0%, 0%, 0);
 	transition: background-color 1s;
 }
 
-#home .hero > nav.scrolled {
+#home nav.scrolled {
 	background-color: #111111;
 	transition: background-color 1s;
 }
@@ -44,7 +43,13 @@ body {
 	position: fixed;
 	top: 100;
 	background: rgba(0, 0, 0, 0.5);
-	color: #f1f1f1;
 	width: 100%;
 	padding: 20px;
+}
+
+#home .media-container {
+	top: 50%;
+	background: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	padding: 3%;
 }
