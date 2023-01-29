@@ -2,9 +2,9 @@ body {
 	overflow: hidden; /* Hide scrollbars */
 }
 
-.hero {
+#index .hero {
 	background: linear-gradient(120deg, #c42f9a 0%, #000000 100%),
-		linear-gradient(120deg, #841E67 0%, #099499 100%),
+		linear-gradient(120deg, #841e67 0%, #099499 100%),
 		linear-gradient(130deg, #00f0ff 0%, #000000 100%),
 		radial-gradient(110% 140% at 15% 90%, #ffffff 0%, #099499 100%),
 		radial-gradient(100% 100% at 50% 0%, #ad00ff 0%, #00ffe0 100%),
@@ -14,14 +14,37 @@ body {
 		difference, normal;
 }
 
-nav,
-footer {
+#home nav,
+#home footer {
 	background-color: hsla(0, 0%, 0%, 0);
 	transition: background-color 1s;
 }
 
-.hero > nav.scrolled {
+#home .hero > nav.scrolled {
 	background-color: #111111;
 	transition: background-color 1s;
 }
 
+#home .hero-body {
+	contain: strict;
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#home #video {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	min-height: 100%;
+	object-fit: cover;
+}
+
+/* Add some content at the bottom of the video/page */
+#home .video-description {
+	position: fixed;
+	top: 100;
+	background: rgba(0, 0, 0, 0.5);
+	color: #f1f1f1;
+	width: 100%;
+	padding: 20px;
+}
