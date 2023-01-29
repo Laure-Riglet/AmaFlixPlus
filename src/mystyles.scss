@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url(https://fonts.bunny.net/css?family=urbanist:200,400,600,900);
+
+// Set your brand colors
+$teal: #099499;
+$purple: #841E67;
+$black: #111111;
+$grey-light: #96aaaa;
+$grey-lighter: #ceeaea;
+$white: #ffffff;
+
+// Update Bulma's global variables
+$family-sans-serif: "Urbanist", sans-serif;
+$grey-dark: $grey-light;
+$grey-light: $grey-lighter;
+$primary: $purple;
+$link: $teal;
+$text: $white;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: $black;
+$body-min-width: 100%;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// Import only what you need from Bulma
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/form/_all.sass";
+@import "../node_modules/bulma/sass/components/navbar.sass";
+@import "../node_modules/bulma/sass/layout/hero.sass";
+@import "../node_modules/bulma/sass/layout/section.sass";

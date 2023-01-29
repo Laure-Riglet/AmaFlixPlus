@@ -1,0 +1,27 @@
+body {
+	overflow: hidden; /* Hide scrollbars */
+}
+
+.hero {
+	background: linear-gradient(120deg, #c42f9a 0%, #000000 100%),
+		linear-gradient(120deg, #841E67 0%, #099499 100%),
+		linear-gradient(130deg, #00f0ff 0%, #000000 100%),
+		radial-gradient(110% 140% at 15% 90%, #ffffff 0%, #099499 100%),
+		radial-gradient(100% 100% at 50% 0%, #ad00ff 0%, #00ffe0 100%),
+		radial-gradient(100% 100% at 50% 0%, #bbbbbb 0%, #7300a9 80%),
+		linear-gradient(30deg, #099499 0%, #111111 100%);
+	background-blend-mode: overlay, color, overlay, difference, color-dodge,
+		difference, normal;
+}
+
+nav,
+footer {
+	background-color: hsla(0, 0%, 0%, 0);
+	transition: background-color 1s;
+}
+
+.hero > nav.scrolled {
+	background-color: #111111;
+	transition: background-color 1s;
+}
+

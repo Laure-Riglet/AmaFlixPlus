@@ -1,0 +1,32 @@
+{
+  "name": "amaflixplus",
+  "version": "1.0.0",
+  "description": "- modal vue détails films/séries - modal login",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Laure-Riglet/AmaFlixPlus.git"
+  },
+  "author": "L4ur3l3i",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Laure-Riglet/AmaFlixPlus/issues"
+  },
+  "homepage": "https://github.com/Laure-Riglet/AmaFlixPlus#readme",
+  "devDependencies": {
+    "bulma": "^0.9.4",
+    "css-loader": "^6.7.3",
+    "mini-css-extract-plugin": "^2.7.2",
+    "node-sass": "^8.0.0",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "browser": {
+    "[module-name]": false   
+  }
+}
