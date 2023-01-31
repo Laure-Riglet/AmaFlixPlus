@@ -41,10 +41,20 @@ body {
 /* Add some content at the bottom of the video/page */
 #home .video-description {
 	position: fixed;
-	top: 100;
+	top: 50%;
+	left: 40%;
 	background: rgba(0, 0, 0, 0.5);
-	width: 100%;
-	padding: 20px;
+	width: 60%;
+	height: 45%;
+}
+
+#home .columns.video-descr-box {
+	height: 100%;
+	padding: 0 12px;
+}
+
+#home .video-descr-box .column {
+	height: 100%;
 }
 
 #home .media-container {

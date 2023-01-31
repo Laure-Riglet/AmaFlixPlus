@@ -1,156 +1,117 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>AmaFlix+</title>
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/@mdi/font@7.1.96/css/materialdesignicons.min.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-		/>
-		<link rel="stylesheet" href="css/mystyles.css" />
-		<link rel="stylesheet" href="css/styles.css" />
-	</head>
-	<body>
-		<div id="index">
-			<section
-				class="hero is-fullheight is-flex is-justify-content-center"
-			>
-				<div class="columns">
-					<div class="column is-6 is-offset-2">
-						<div
-							class="hero-body is-flex is-flex-direction-column is-justify-content-center is-align-items-flex-start"
-						>
-							<div class="block">
-								<figure class="image is-1024x205">
-									<img src="img/amaflix_logo_2048x410.png" />
-								</figure>
-							</div>
-							<div class="block">
-								<p class="title has-text-left has-text-white">
-									Regardez vos
-									<strong
-										><span class="has-text-primary"
-											>émissions</span
-										></strong
-									>,
-									<strong
-										><span class="has-text-primary"
-											>séries</span
-										></strong
-									>
-									et
-									<strong
-										><span class="has-text-primary"
-											>films préférés</span
-										></strong
-									>
-									sur la toute nouvelle plateforme AmaFlix+
-								</p>
-							</div>
-							<div
-								class="block buttons is-full is-flex is-flex-direction-row is-justify-content-flex-end"
-							>
-								<a
-									class="button js-modal-trigger is-link is-large"
-									data-target="modal-js-connection"
-								>
-									Se connecter
-								</a>
-								<a
-									class="button js-modal-trigger is-light is-large"
-									data-target="modal-js-subscription"
-								>
-									S'abonner
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<footer class="footer">
-				<div class="content has-text-centered">
-					<p>
-						<strong>AmaFlix+</strong> par
-						<a href="https://jgthms.com">Laure Riglet</a>. Le code
-						source est sous licence
-						<a href="http://opensource.org/licenses/mit-license.php"
-							>MIT</a
-						>. Le contenu du site est sous licence
-						<a
-							href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
-							>CC BY NC SA 4.0</a
-						>.
-					</p>
-				</div>
-			</footer>
-			<!-- Connection modal start -->
-			<div id="modal-js-connection" class="modal">
-				<div class="modal-background"></div>
-				<div class="modal-card">
-					<header class="modal-card-head">
-						<p class="modal-card-title">Connexion</p>
-						<button class="delete" aria-label="close"></button>
-					</header>
-					<section class="modal-card-body">
-						<div class="field">
-							<p class="control has-icons-left has-icons-right">
-								<input
-									class="input"
-									type="email"
-									placeholder="Email"
-								/>
-								<span class="icon is-small is-left">
-									<i class="mdi mdi-email-outline"></i>
-								</span>
-								<span class="icon is-small is-right">
-									<i class="fas fa-check"></i>
-								</span>
-							</p>
-						</div>
-						<div class="field">
-							<p class="control has-icons-left">
-								<input
-									class="input"
-									type="password"
-									placeholder="Password"
-								/>
-								<span class="icon is-small is-left">
-									<i class="mdi mdi-lock-outline"></i>
-								</span>
-							</p>
-						</div>
-					</section>
-					<footer class="modal-card-foot">
-						<button class="button is-primary">S'identifier</button>
-					</footer>
-				</div>
-			</div>
-			<!-- Connection modal end -->
-			<!-- Subscription modal start -->
-			<div id="modal-js-subscription" class="modal">
-				<div class="modal-background"></div>
-				<div class="modal-card">
-					<header class="modal-card-head">
-						<p class="modal-card-title">Inscription</p>
-						<button class="delete" aria-label="close"></button>
-					</header>
-					<section class="modal-card-body">
-						<!-- Content ... -->
-					</section>
-					<footer class="modal-card-foot">
-						<button class="button is-success">Save changes</button>
-						<button class="button">Cancel</button>
-					</footer>
-				</div>
-			</div>
-		</div>
-		<!-- Subscription modal end -->
-		<script src="js/DOM-index.js"></script>
-	</body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AmaFlix+</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.1.96/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <link rel="stylesheet" href="css/mystyles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <div id="index">
+    <section class="hero is-fullheight is-flex is-justify-content-center">
+      <div class="columns">
+        <div class="column is-6 is-offset-2">
+          <div class="hero-body is-flex is-flex-direction-column is-justify-content-center is-align-items-flex-start">
+            <div class="block">
+              <figure class="image is-1024x205">
+                <img src="img/amaflix_logo_2048x410.png" />
+              </figure>
+            </div>
+            <div class="block">
+              <p class="title has-text-left has-text-white">
+                Regardez vos
+                <strong><span class="has-text-primary">émissions</span></strong>,
+                <strong><span class="has-text-primary">séries</span></strong>
+                et
+                <strong><span class="has-text-primary">films préférés</span></strong>
+                sur la toute nouvelle plateforme AmaFlix+
+              </p>
+            </div>
+            <div class="block buttons is-full is-flex is-flex-direction-row is-justify-content-flex-end">
+              <a class="button js-modal-trigger is-link is-large" data-target="modal-js-connection">
+                Se connecter
+              </a>
+              <a class="button js-modal-trigger is-light is-large" data-target="modal-js-subscription">
+                S'abonner
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>AmaFlix+</strong> par
+          <a href="https://jgthms.com">Laure Riglet</a>. Le code source est
+          sous licence
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. Le
+          contenu du site est sous licence
+          <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        </p>
+      </div>
+    </footer>
+    <!-- Connection modal start -->
+    <div id="modal-js-connection" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Connexion</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <div class="field">
+            <p class="control has-icons-left has-icons-right">
+              <input class="input" type="email" placeholder="Email" />
+              <span class="icon is-small is-left">
+                <i class="mdi mdi-email-outline"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="password" placeholder="Password" />
+              <span class="icon is-small is-left">
+                <i class="mdi mdi-lock-outline"></i>
+              </span>
+            </p>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-primary">S'identifier</button>
+        </footer>
+      </div>
+    </div>
+    <!-- Connection modal end -->
+    <!-- Subscription modal start -->
+    <div id="modal-js-subscription" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Inscription</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <!-- Content ... -->
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success">Save changes</button>
+          <button class="button">Cancel</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+  <!-- Subscription modal end -->
+  <script src="js/DOM-index.js"></script>
+</body>
+
 </html>
