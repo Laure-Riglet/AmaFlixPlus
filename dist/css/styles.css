@@ -2,6 +2,10 @@ body {
 	overflow: hidden; /* Hide scrollbars */
 }
 
+.navbar .profile-pic {
+	width: auto;
+}
+
 #index .hero {
 	background: linear-gradient(120deg, #c42f9a 0%, #000000 100%),
 		linear-gradient(120deg, #841e67 0%, #099499 100%),
@@ -14,12 +18,12 @@ body {
 		difference, normal;
 }
 
-#home nav {
+#home nav#top {
 	background-color: hsla(0, 0%, 0%, 0);
 	transition: background-color 1s;
 }
 
-#home nav.scrolled {
+#home nav#top.scrolled {
 	background-color: #111111;
 	transition: background-color 1s;
 }
@@ -28,7 +32,7 @@ body {
 	contain: strict;
 }
 
-/* Style the video: 100% width and height to cover the entire window */
+/* Style the video: 100% width and height to cover the entire hero */
 #home #video {
 	position: absolute;
 	right: 0;
@@ -50,16 +54,35 @@ body {
 
 #home .columns.video-descr-box {
 	height: 100%;
-	padding: 0 12px;
+	width: 100%;
+	margin: 0;
 }
 
 #home .video-descr-box .column {
 	height: 100%;
 }
 
-#home .media-container {
+#home .video-descr-box .column figure {
+	object-fit: contain;
+	height: 100%;
+}
+
+.image.is-2by3 {
+	padding-top: 0;
+}
+
+#home .video-descr-box .column figure img {
+	object-fit: contain;
+	max-height: 100%;
+}
+
+.media-container {
 	top: 50%;
 	background: rgba(0, 0, 0, 0.5);
 	width: 100%;
 	padding: 3%;
+}
+
+.container:not(.home) {
+	margin-top: 64px;
 }

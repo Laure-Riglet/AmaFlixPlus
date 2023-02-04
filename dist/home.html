@@ -19,7 +19,7 @@
 			<!-- Hero preview highlight-->
 			<section class="hero is-halfheight bulma-overlay-mixin-parent">
 				<!-- Navbar -->
-				<nav class="navbar is-fixed-top bulma-overlay-mixin is-transparent" role="navigation"
+				<nav id="top" class="navbar is-fixed-top bulma-overlay-mixin is-transparent" role="navigation"
 					aria-label="main navigation">
 					<div class="navbar-brand">
 						<a class="navbar-item" href="https://bulma.io">
@@ -51,18 +51,18 @@
 							</a>
 
 							<div class="navbar-item has-dropdown is-hoverable">
-								
-									<a class="navbar-link">
-										<figure class="image is-28x28 mr-2">
-											<img class="is-rounded" src="img/amaflix_profile_pic_48x48.png" />
-										</figure>
-										<div class="profile">
-											<div class="is-size-6">
-												<strong>L4ur3l3i</strong>
-											</div>
+
+								<a class="navbar-link">
+									<figure class="image is-28x28 mr-2">
+										<img class="is-rounded" src="img/amaflix_profile_pic_48x48.png" />
+									</figure>
+									<div class="profile">
+										<div class="is-size-6">
+											<strong>L4ur3l3i</strong>
 										</div>
-									</a>
-								
+									</div>
+								</a>
+
 								<div class="navbar-dropdown">
 									<a class="navbar-item"> Mon profil </a>
 									<a class="navbar-item"> Mes favoris </a>
@@ -93,7 +93,8 @@
 
 					<div class="container video-description m-0 is-flex is-align-items-center">
 						<div class="columns video-descr-box">
-							<div class="column is-12-mobile is-four-fifths-desktop is-flex is-flex-direction-column is-justify-content-space-evenly">
+							<div
+								class="column is-12-mobile is-four-fifths-desktop is-flex is-flex-direction-column is-justify-content-space-evenly">
 								<p class="is-size-6-mobile is-size-4-tablet has-text-primary">En vedette :</p>
 								<p class="is-size-5-mobile is-size-3-tablet has-text-light has-text-weight-bold">
 									Encanto, la fantastique famille Madrigal
@@ -115,7 +116,7 @@
 							<div class="column is-one-fifth-desktop is-hidden-touch">
 								<figure class="image is-2by3">
 									<img src="https://image.tmdb.org/t/p/original/75s7inwv1WHRuySyjA6p0oMaz9Z.jpg"
-										alt="Affiche de Les Goonies" />
+										alt="Affiche de Encanto, la fantastique famille Madrigal" />
 								</figure>
 							</div>
 						</div>
@@ -124,8 +125,11 @@
 			</section>
 		</header>
 		<!-- Page content-->
-		<main class="container">
+		<main class="container my-3">
 			<div class="columns is-multiline m-3">
+				<div class="column is-12 subtitle is-3 mb-0 has-text-white">
+					<p class="">Les nouveaut&eacute;s</p>
+				</div>
 				<!-- Media card start -->
 				<div class="column is-one-quarter">
 					<div class="card">
@@ -623,6 +627,22 @@
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="column is-12">
+					<nav class=" pagination is-centered" role="navigation" aria-label="pagination">
+						<a class="pagination-previous">Previous</a>
+						<a class="pagination-next">Next page</a>
+						<ul class="pagination-list">
+							<li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+							<li><span class="pagination-ellipsis">&hellip;</span></li>
+							<li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
+							<li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a>
+							</li>
+							<li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
+							<li><span class="pagination-ellipsis">&hellip;</span></li>
+							<li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+						</ul>
+					</nav>
 				</div>
 			</div>
 		</main>

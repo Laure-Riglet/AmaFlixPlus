@@ -29,6 +29,7 @@ $body-min-width: 100%;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
+$box-color: $purple;
 
 // Import only what you need from Bulma
 @import '../node_modules/bulma/sass/utilities/_all.sass';

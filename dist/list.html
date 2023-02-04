@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top p-0">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AmaFlix+</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.1.96/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="css/mystyles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <div id="list">
+        <!-- Header -->
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar is-fixed-top bulma-overlay-mixin is-transparent" role="navigation"
+                aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="https://bulma.io">
+                        <img src="img/amaflix_logo_48x240_dark.png" alt="Bulma: a modern CSS framework based on Flexbox"
+                            width="140" height="28" />
+                    </a>
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                        data-target="navbarContent">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <div id="navbarContent" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item"> Accueil </a>
+                        <a class="navbar-item"> Séries </a>
+                        <a class="navbar-item"> Films </a>
+                        <a class="navbar-item"> Nouveautés </a>
+                    </div>
+
+                    <div class="navbar-end">
+                        <a class="navbar-item">
+                            <span class="icon is-large">
+                                <i class="mdi mdi-help-circle-outline"></i>
+                            </span>
+                        </a>
+
+                        <div class="navbar-item has-dropdown is-hoverable">
+
+                            <a class="navbar-link">
+                                <figure class="image is-28x28 mr-2">
+                                    <img class="is-rounded" src="img/amaflix_profile_pic_48x48.png" />
+                                </figure>
+                                <div class="profile">
+                                    <div class="is-size-6">
+                                        <strong>L4ur3l3i</strong>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <div class="navbar-dropdown">
+                                <a class="navbar-item"> Mon profil </a>
+                                <a class="navbar-item"> Mes favoris </a>
+                                <hr class="navbar-divider" />
+                                <a class="navbar-item"> Déconnexion </a>
+                            </div>
+                        </div>
+                        <div class="navbar-item">
+                            <div class="search">
+                                <p class="control has-icons-left">
+                                    <input class="input has-background-link" type="text" placeholder="Rechercher..." />
+                                    <span class="icon is-small is-left">
+                                        <i class="mdi mdi-magnify"></i>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- Page content-->
+        <main class="container">
+            <div class="column is-12 subtitle is-3 mb-0 has-text-white">
+                <p class="">Les nouveaut&eacute;s</p>
+            </div>
+            <div class="columns is-multiline m-3">
+                <!-- Media card start -->
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-9by5">
+                                <img src="https://image.tmdb.org/t/p/original/imtHhH4NuKMMaSityrxhuSmtyd3.jpg"
+                                    alt="Affiche de Les Goonies" />
+                            </figure>
+
+                            <div class="media-container is-overlay is-flex is-align-items-end">
+                                <div class="media-content">
+                                    <p class="title is-5 has-text-white">
+                                        Les Goonies
+                                    </p>
+                                    <p
+                                        class="subtitle is-6 has-text-white is-flex is-justify-content-space-between is-align-items-center">
+                                        1985
+
+                                        <span class="icon-text has-text-warning">
+                                            <span class="tag has-background-primary mr-1">7.5</span>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star-half-full"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Media card end -->
+
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-9by5">
+                                <img src="https://image.tmdb.org/t/p/original/7tqV9ihSDfsa9C7D7PRRnZ1ZrVA.jpg"
+                                    alt="Affiche de Le Masque de Zorro" />
+                            </figure>
+
+                            <div class="media-container is-overlay is-flex is-align-items-end">
+                                <div class="media-content">
+                                    <p class="title is-5 has-text-white">
+                                        Le Masque de Zorro
+                                    </p>
+                                    <p
+                                        class="subtitle is-6 has-text-white is-flex is-justify-content-space-between is-align-items-center">
+                                        1998
+                                        <span class="icon-text has-text-warning">
+                                            <span class="tag has-background-primary mr-1">6.5</span>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star-half-full"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-9by5">
+                                <img src="https://image.tmdb.org/t/p/original/g2s22rGjCTCYsjI1iAflem7HjdG.jpg"
+                                    alt="Affiche de La Famille Tenenbaum" />
+                            </figure>
+
+                            <div class="media-container is-overlay is-flex is-align-items-end">
+                                <div class="media-content">
+                                    <p class="title is-5 has-text-white">
+                                        La Famille Tenenbaum
+                                    </p>
+                                    <p
+                                        class="subtitle is-6 has-text-white is-flex is-justify-content-space-between is-align-items-center">
+                                        2001
+                                        <span class="icon-text has-text-warning">
+                                            <span class="tag has-background-primary mr-1">7.5</span>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star-half-full"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-9by5">
+                                <img src="https://image.tmdb.org/t/p/original/xWT5F1DNxciNLEMXRl49iq8zvN7.jpg"
+                                    alt="Affiche de La Famille Tenenbaum" />
+                            </figure>
+
+                            <div class="media-container is-overlay is-flex is-align-items-end">
+                                <div class="media-content">
+                                    <p class="title is-5 has-text-white">
+                                        L'Étrange Noël de monsieur Jack
+                                    </p>
+                                    <p
+                                        class="subtitle is-6 has-text-white is-flex is-justify-content-space-between is-align-items-center">
+                                        1993
+                                        <span class="icon-text has-text-warning">
+                                            <span class="tag has-background-primary mr-1">7.8</span>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-9by5">
+                                <img src="https://image.tmdb.org/t/p/original/u2HrA8BMvvHURz5mVOIe9EM1zGx.jpg"
+                                    alt="Affiche de La Famille Tenenbaum" />
+                            </figure>
+
+                            <div class="media-container is-overlay is-flex is-align-items-end">
+                                <div class="media-content">
+                                    <p class="title is-5 has-text-white">
+                                        1001 Pattes
+                                    </p>
+                                    <p
+                                        class="subtitle is-6 has-text-white is-flex is-justify-content-space-between is-align-items-center">
+                                        1998
+                                        <span class="icon-text has-text-warning">
+                                            <span class="tag has-background-primary mr-1">7</span>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i><i class="mdi mdi-star-half-full"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-9by5">
+                                <img src="https://image.tmdb.org/t/p/original/xcjJ5khg2yzOa282mza39Lbrm7j.jpg"
+                                    alt="Affiche de La Famille Tenenbaum" />
+                            </figure>
+
+                            <div class="media-container is-overlay is-flex is-align-items-end">
+                                <div class="media-content">
+                                    <p class="title is-5 has-text-white">
+                                        L'Exorciste
+                                    </p>
+                                    <p
+                                        class="subtitle is-6 has-text-white is-flex is-justify-content-space-between is-align-items-center">
+                                        1973
+                                        <span class="icon-text has-text-warning">
+                                            <span class="tag has-background-primary mr-1">7.7</span>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-9by5">
+                                <img src="https://image.tmdb.org/t/p/original/h5pAEVma835u8xoE60kmLVopLct.jpg"
+                                    alt="Affiche de La Famille Tenenbaum" />
+                            </figure>
+
+                            <div class="media-container is-overlay is-flex is-align-items-end">
+                                <div class="media-content">
+                                    <p class="title is-5 has-text-white">
+                                        Kiki la petite sorcière
+                                    </p>
+                                    <p
+                                        class="subtitle is-6 has-text-white is-flex is-justify-content-space-between is-align-items-center">
+                                        1989
+                                        <span class="icon-text has-text-warning">
+                                            <span class="tag has-background-primary mr-1">7.8</span>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-9by5">
+                                <img src="https://image.tmdb.org/t/p/original/43508X0evUDHMoyMSecsLxcy7RK.jpg"
+                                    alt="Affiche de La Famille Tenenbaum" />
+                            </figure>
+
+                            <div class="media-container is-overlay is-flex is-align-items-end">
+                                <div class="media-content">
+                                    <p class="title is-5 has-text-white">
+                                        Inglourious Basterds
+                                    </p>
+                                    <p
+                                        class="subtitle is-6 has-text-white is-flex is-justify-content-space-between is-align-items-center">
+                                        2009
+                                        <span class="icon-text has-text-warning">
+                                            <span class="tag has-background-primary mr-1">8.2</span>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-9by5">
+                                <img src="https://image.tmdb.org/t/p/original/imtHhH4NuKMMaSityrxhuSmtyd3.jpg"
+                                    alt="Affiche de Les Goonies" />
+                            </figure>
+
+                            <div class="media-container is-overlay is-flex is-align-items-end">
+                                <div class="media-content">
+                                    <p class="title is-5 has-text-white">
+                                        Les Goonies
+                                    </p>
+                                    <p
+                                        class="subtitle is-6 has-text-white is-flex is-justify-content-space-between is-align-items-center">
+                                        1985
+
+                                        <span class="icon-text has-text-warning">
+                                            <span class="tag has-background-primary mr-1">7.5</span>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star-half-full"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Media card end -->
+
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-9by5">
+                                <img src="https://image.tmdb.org/t/p/original/7tqV9ihSDfsa9C7D7PRRnZ1ZrVA.jpg"
+                                    alt="Affiche de Le Masque de Zorro" />
+                            </figure>
+
+                            <div class="media-container is-overlay is-flex is-align-items-end">
+                                <div class="media-content">
+                                    <p class="title is-5 has-text-white">
+                                        Le Masque de Zorro
+                                    </p>
+                                    <p
+                                        class="subtitle is-6 has-text-white is-flex is-justify-content-space-between is-align-items-center">
+                                        1998
+                                        <span class="icon-text has-text-warning">
+                                            <span class="tag has-background-primary mr-1">6.5</span>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star-half-full"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-9by5">
+                                <img src="https://image.tmdb.org/t/p/original/g2s22rGjCTCYsjI1iAflem7HjdG.jpg"
+                                    alt="Affiche de La Famille Tenenbaum" />
+                            </figure>
+
+                            <div class="media-container is-overlay is-flex is-align-items-end">
+                                <div class="media-content">
+                                    <p class="title is-5 has-text-white">
+                                        La Famille Tenenbaum
+                                    </p>
+                                    <p
+                                        class="subtitle is-6 has-text-white is-flex is-justify-content-space-between is-align-items-center">
+                                        2001
+                                        <span class="icon-text has-text-warning">
+                                            <span class="tag has-background-primary mr-1">7.5</span>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star-half-full"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-9by5">
+                                <img src="https://image.tmdb.org/t/p/original/xWT5F1DNxciNLEMXRl49iq8zvN7.jpg"
+                                    alt="Affiche de La Famille Tenenbaum" />
+                            </figure>
+
+                            <div class="media-container is-overlay is-flex is-align-items-end">
+                                <div class="media-content">
+                                    <p class="title is-5 has-text-white">
+                                        L'Étrange Noël de monsieur Jack
+                                    </p>
+                                    <p
+                                        class="subtitle is-6 has-text-white is-flex is-justify-content-space-between is-align-items-center">
+                                        1993
+                                        <span class="icon-text has-text-warning">
+                                            <span class="tag has-background-primary mr-1">7.8</span>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-9by5">
+                                <img src="https://image.tmdb.org/t/p/original/u2HrA8BMvvHURz5mVOIe9EM1zGx.jpg"
+                                    alt="Affiche de La Famille Tenenbaum" />
+                            </figure>
+
+                            <div class="media-container is-overlay is-flex is-align-items-end">
+                                <div class="media-content">
+                                    <p class="title is-5 has-text-white">
+                                        1001 Pattes
+                                    </p>
+                                    <p
+                                        class="subtitle is-6 has-text-white is-flex is-justify-content-space-between is-align-items-center">
+                                        1998
+                                        <span class="icon-text has-text-warning">
+                                            <span class="tag has-background-primary mr-1">7</span>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i><i class="mdi mdi-star-half-full"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-9by5">
+                                <img src="https://image.tmdb.org/t/p/original/xcjJ5khg2yzOa282mza39Lbrm7j.jpg"
+                                    alt="Affiche de La Famille Tenenbaum" />
+                            </figure>
+
+                            <div class="media-container is-overlay is-flex is-align-items-end">
+                                <div class="media-content">
+                                    <p class="title is-5 has-text-white">
+                                        L'Exorciste
+                                    </p>
+                                    <p
+                                        class="subtitle is-6 has-text-white is-flex is-justify-content-space-between is-align-items-center">
+                                        1973
+                                        <span class="icon-text has-text-warning">
+                                            <span class="tag has-background-primary mr-1">7.7</span>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-9by5">
+                                <img src="https://image.tmdb.org/t/p/original/h5pAEVma835u8xoE60kmLVopLct.jpg"
+                                    alt="Affiche de La Famille Tenenbaum" />
+                            </figure>
+
+                            <div class="media-container is-overlay is-flex is-align-items-end">
+                                <div class="media-content">
+                                    <p class="title is-5 has-text-white">
+                                        Kiki la petite sorcière
+                                    </p>
+                                    <p
+                                        class="subtitle is-6 has-text-white is-flex is-justify-content-space-between is-align-items-center">
+                                        1989
+                                        <span class="icon-text has-text-warning">
+                                            <span class="tag has-background-primary mr-1">7.8</span>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-9by5">
+                                <img src="https://image.tmdb.org/t/p/original/43508X0evUDHMoyMSecsLxcy7RK.jpg"
+                                    alt="Affiche de La Famille Tenenbaum" />
+                            </figure>
+
+                            <div class="media-container is-overlay is-flex is-align-items-end">
+                                <div class="media-content">
+                                    <p class="title is-5 has-text-white">
+                                        Inglourious Basterds
+                                    </p>
+                                    <p
+                                        class="subtitle is-6 has-text-white is-flex is-justify-content-space-between is-align-items-center">
+                                        2009
+                                        <span class="icon-text has-text-warning">
+                                            <span class="tag has-background-primary mr-1">8.2</span>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star"></i>
+                                            <i class="mdi mdi-star-outline"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-12">
+                    <nav class=" pagination is-centered" role="navigation" aria-label="pagination">
+                        <a class="pagination-previous">Previous</a>
+                        <a class="pagination-next">Next page</a>
+                        <ul class="pagination-list">
+                            <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+                            <li><span class="pagination-ellipsis">&hellip;</span></li>
+                            <li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
+                            <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a>
+                            </li>
+                            <li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
+                            <li><span class="pagination-ellipsis">&hellip;</span></li>
+                            <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer has-background-primary">
+            <div class="content has-text-centered">
+                <p>
+                    <strong>AmaFlix+</strong> par
+                    <a href="https://jgthms.com">Laure Riglet</a>. Le code
+                    source est sous licence
+                    <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. Le contenu du site est sous
+                    licence
+                    <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>. Videos by cottonbro
+                    studio, Manila Girl Tours, ROMAN
+                    ODINTSOV, John Cardino
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS script -->
+    <script src="js/DOM-navbar.js"></script>
+</body>
+
+</html>
