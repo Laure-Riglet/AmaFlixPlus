@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top p-0">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AmaFlix+</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.1.96/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="css/mystyles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <div id="list">
+        <!-- Header -->
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar is-fixed-top bulma-overlay-mixin is-transparent" role="navigation"
+                aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="https://bulma.io">
+                        <img src="img/amaflix_logo_48x240_dark.png" alt="Bulma: a modern CSS framework based on Flexbox"
+                            width="140" height="28" />
+                    </a>
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                        data-target="navbarContent">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <div id="navbarContent" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item"> Accueil </a>
+                        <a class="navbar-item"> Séries </a>
+                        <a class="navbar-item"> Films </a>
+                        <a class="navbar-item"> Nouveautés </a>
+                    </div>
+
+                    <div class="navbar-end">
+                        <a class="navbar-item">
+                            <span class="icon is-large">
+                                <i class="mdi mdi-help-circle-outline"></i>
+                            </span>
+                        </a>
+
+                        <div class="navbar-item has-dropdown is-hoverable">
+
+                            <a class="navbar-link">
+                                <figure class="image is-28x28 mr-2">
+                                    <img class=" profile-pic" src="img/amaflix_profile_pic_48x48.png" />
+                                </figure>
+                                <div class="profile">
+                                    <div class="is-size-6">
+                                        <strong>L4ur3l3i</strong>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <div class="navbar-dropdown">
+                                <a class="navbar-item"> Mon profil </a>
+                                <a class="navbar-item"> Mes favoris </a>
+                                <hr class="navbar-divider" />
+                                <a class="navbar-item"> Déconnexion </a>
+                            </div>
+                        </div>
+                        <div class="navbar-item">
+                            <div class="search">
+                                <p class="control has-icons-left">
+                                    <input class="input has-background-link" type="text" placeholder="Rechercher..." />
+                                    <span class="icon is-small is-left">
+                                        <i class="mdi mdi-magnify"></i>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- Page content-->
+        <main class="container">
+            <div class="columns m-3">
+                <!-- Affiche -->
+                <div class="column is-4">
+                    <div class="card mb-4">
+                        <div class="card-content video-wrapper"><iframe
+                                src="https://www.youtube.com/embed/2VlFOve7YZY?showinfo=0&autoplay=1&controls=2&mute=1&showinfo=0&rel=0&loop=1&playlist=2VlFOve7YZY">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="card is-hidden-mobile">
+                        <div class="card-image">
+                            <figure class="image is-9by5">
+                                <img src="https://image.tmdb.org/t/p/original/lo4IHzO04PV61uha8zgiIdCJtyG.jpg"
+                                    alt="Affiche de Les Goonies" />
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <!-- Description -->
+                <div class="column is-8">
+                    <div class="columns is-mobile">
+                        <div class="column is-12-tablet is-8-mobile">
+                            <div class="tags">
+                                <span class="tag is-primary has-text-dark">Comédie</span>
+                                <span class="tag is-primary has-text-dark">Jeunesse</span>
+                                <span class="tag is-primary has-text-dark">Aventure</span>
+                            </div>
+                            <div class="block">
+                                <p class="title has-text-white is-1 mb-0">Les Goonies</p>
+                                <p class="has-text-white"><i class="mdi mdi-earth"></i> &Eacute;tats-Unis <i
+                                        class="mdi mdi-calendar-multiselect"></i> 7 juin
+                                    1985 <i class="mdi mdi-clock-outline"></i> 1h 54min</p>
+                            </div>
+                        </div>
+                        <div class="column is-hidden-tablet is-4-mobile">
+                            <div class="card-image">
+                                <figure class="image is-9by5">
+                                    <img src="https://image.tmdb.org/t/p/original/lo4IHzO04PV61uha8zgiIdCJtyG.jpg"
+                                        alt="Affiche de Les Goonies" />
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block mt-4">
+                        <p class="box has-background-dark has-text-white">
+                            Lorsqu’un groupe de promoteurs décide de racheter le quartier des Goonies
+                            (les crétins) pour le démolir et construire un parcours de golf, ces derniers décident de se
+                            faire une dernière virée ensemble. Ils suivent une vieille carte au trésor qui les mène dans
+                            nommé Willy‐le‐Borgne. Les Fratelli, famille de criminels recherchée par la police, sont
+                            aussi à la recherche du trésor.</p>
+                    </div>
+                    <div class="block columns">
+                        <div class="column is-6">
+                            <p class="subtitle is-5 mb-3">3 saisons</p>
+                            <div class="tags has-addons mb-1">
+                                <span class="tag is-dark">Saison 1</span>
+                                <span class="tag is-light">24 &eacute;pisodes</span>
+                            </div>
+                            <div class="tags has-addons mb-1">
+                                <span class="tag is-dark">Saison 2</span>
+                                <span class="tag is-light">24 &eacute;pisodes</span>
+                            </div>
+                            <div class="tags has-addons mb-1">
+                                <span class="tag is-dark">Saison 3</span>
+                                <span class="tag is-light">24 &eacute;pisodes</span>
+                            </div>
+                        </div>
+                        <div class="column is-6">
+                            <p class="subtitle is-5 mb-1">Note moyenne des utilisateurs</p>
+                            <div class="block"><span class="icon-text has-text-warning">
+                                    <span class="tag has-background-primary mr-1">7.5</span>
+                                    <i class="mdi mdi-star"></i>
+                                    <i class="mdi mdi-star"></i>
+                                    <i class="mdi mdi-star"></i>
+                                    <i class="mdi mdi-star-half-full"></i>
+                                    <i class="mdi mdi-star-outline"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block persons">
+                        <p class="subtitle is-5 mb-3">Création</p>
+                        <div class="columns is-multiline m-3-touch m-0-desktop">
+                            <!-- Person card start -->
+                            <div class="column is-12-mobile is-6-tablet is-4-desktop mt-3">
+                                <div class="columns is-mobile">
+                                    <div class="column is-3 is-flex is-align-items-center p-0 pl-3">
+                                        <img class=""
+                                            src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/6VIfueb4j3GCsIhxnstsXlY5C3Y.jpg"
+                                            alt="" />
+                                    </div>
+                                    <div
+                                        class="column is-9 ml-3 is-flex is-flex-direction-column is-justify-content-center">
+                                        <p class="title is-6 has-text-primary has-text-centered-mobile">Matthew Fox</p>
+                                        <p class="subtitle is-6 has-text-white has-text-centered-mobile">Réalisateur</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Person card end -->
+                            <div class="column is-12-mobile is-6-tablet is-4-desktop mt-3">
+                                <div class="columns is-mobile">
+                                    <div class="column is-3 is-flex is-align-items-center p-0 pl-3">
+                                        <img class=""
+                                            src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/6VIfueb4j3GCsIhxnstsXlY5C3Y.jpg"
+                                            alt="" />
+                                    </div>
+                                    <div
+                                        class="column is-9 ml-3 is-flex is-flex-direction-column is-justify-content-center">
+                                        <p class="title is-6 has-text-primary has-text-centered-mobile">Matthew Fox</p>
+                                        <p class="subtitle is-6 has-text-white has-text-centered-mobile">Scénariste</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-12-mobile is-6-tablet is-4-desktop mt-3">
+                                <div class="columns is-mobile">
+                                    <div class="column is-3 is-flex is-align-items-center p-0 pl-3">
+                                        <img class=""
+                                            src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/6VIfueb4j3GCsIhxnstsXlY5C3Y.jpg"
+                                            alt="" />
+                                    </div>
+                                    <div
+                                        class="column is-9 ml-3 is-flex is-flex-direction-column is-justify-content-center">
+                                        <p class="title is-6 has-text-primary has-text-centered-mobile">Matthew Fox</p>
+                                        <p class="subtitle is-6 has-text-white has-text-centered-mobile">Auteur</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block persons">
+                        <p class="subtitle is-5 mb-3">Distribution</p>
+                        <div class="columns is-multiline m-3-touch m-0-desktop">
+                            <!-- Person card start -->
+                            <div class="column is-12-mobile is-6-tablet is-4-desktop mt-3">
+                                <div class="columns is-mobile">
+                                    <div class="column is-3 is-flex is-align-items-center p-0 pl-3">
+                                        <img class=""
+                                            src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/6VIfueb4j3GCsIhxnstsXlY5C3Y.jpg"
+                                            alt="" />
+                                    </div>
+                                    <div
+                                        class="column is-9 ml-3 is-flex is-flex-direction-column is-justify-content-center">
+                                        <p class="title is-6 has-text-primary has-text-centered-mobile">Matthew Fox</p>
+                                        <p class="subtitle is-6 has-text-white has-text-centered-mobile is-italic">Jack
+                                            Shepperd</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Person card end -->
+                            <div class="column is-12-mobile is-6-tablet is-4-desktop mt-3">
+                                <div class="columns is-mobile">
+                                    <div class="column is-3 is-flex is-align-items-center p-0 pl-3">
+                                        <img class=""
+                                            src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/6VIfueb4j3GCsIhxnstsXlY5C3Y.jpg"
+                                            alt="" />
+                                    </div>
+                                    <div
+                                        class="column is-9 ml-3 is-flex is-flex-direction-column is-justify-content-center">
+                                        <p class="title is-6 has-text-primary has-text-centered-mobile">Matthew Fox</p>
+                                        <p class="subtitle is-6 has-text-white has-text-centered-mobile is-italic">Jack
+                                            Shepperd</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-12-mobile is-6-tablet is-4-desktop mt-3">
+                                <div class="columns is-mobile">
+                                    <div class="column is-3 is-flex is-align-items-center p-0 pl-3">
+                                        <img class=""
+                                            src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/6VIfueb4j3GCsIhxnstsXlY5C3Y.jpg"
+                                            alt="" />
+                                    </div>
+                                    <div
+                                        class="column is-9 ml-3 is-flex is-flex-direction-column is-justify-content-center">
+                                        <p class="title is-6 has-text-primary has-text-centered-mobile">Matthew Fox</p>
+                                        <p class="subtitle is-6 has-text-white has-text-centered-mobile is-italic">Jack
+                                            Shepperd</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-12-mobile is-6-tablet is-4-desktop mt-3">
+                                <div class="columns is-mobile">
+                                    <div class="column is-3 is-flex is-align-items-center p-0 pl-3">
+                                        <img class=""
+                                            src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/6VIfueb4j3GCsIhxnstsXlY5C3Y.jpg"
+                                            alt="" />
+                                    </div>
+                                    <div
+                                        class="column is-9 ml-3 is-flex is-flex-direction-column is-justify-content-center">
+                                        <p class="title is-6 has-text-primary has-text-centered-mobile">Matthew Fox</p>
+                                        <p class="subtitle is-6 has-text-white has-text-centered-mobile is-italic">Jack
+                                            Shepperd</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-12-mobile is-6-tablet is-4-desktop mt-3">
+                                <div class="columns is-mobile">
+                                    <div class="column is-3 is-flex is-align-items-center p-0 pl-3">
+                                        <img class=""
+                                            src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/6VIfueb4j3GCsIhxnstsXlY5C3Y.jpg"
+                                            alt="" />
+                                    </div>
+                                    <div
+                                        class="column is-9 ml-3 is-flex is-flex-direction-column is-justify-content-center">
+                                        <p class="title is-6 has-text-primary has-text-centered-mobile">Matthew Fox</p>
+                                        <p class="subtitle is-6 has-text-white has-text-centered-mobile is-italic">Jack
+                                            Shepperd</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Media card end -->
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer has-background-primary">
+            <div class="content has-text-centered">
+                <p>
+                    <strong>AmaFlix+</strong> par
+                    <a href="https://jgthms.com">Laure Riglet</a>. Le code
+                    source est sous licence
+                    <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. Le contenu du site est sous
+                    licence
+                    <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>. Videos by cottonbro
+                    studio, Manila Girl Tours, ROMAN
+                    ODINTSOV, John Cardino
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS script -->
+    <script src="js/DOM-navbar.js"></script>
+</body>
+
+</html>
