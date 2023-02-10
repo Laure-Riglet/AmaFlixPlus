@@ -52,10 +52,14 @@ class Movie
     #[ORM\ManyToMany(targetEntity: Country::class, inversedBy: 'movies')]
     private Collection $countries;
 
+    #[ORM\OneToMany(mappedBy: 'movie', targetEntity: Credit::class, orphanRemoval: true)]
+    private Collection $credits;
+
     public function __construct()
     {
         $this->tags = new ArrayCollection();
         $this->countries = new ArrayCollection();
+        $this->credits = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -227,6 +231,36 @@ class Movie
     public function removeCountry(Country $country): self
     {
         $this->countries->removeElement($country);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Credit>
+     */
+    public function getCredits(): Collection
+    {
+        return $this->credits;
+    }
+
+    public function addCredit(Credit $credit): self
+    {
+        if (!$this->credits->contains($credit)) {
+            $this->credits->add($credit);
+            $credit->setMovie($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCredit(Credit $credit): self
+    {
+        if ($this->credits->removeElement($credit)) {
+            // set the owning side to null (unless already changed)
+            if ($credit->getMovie() === $this) {
+                $credit->setMovie(null);
+            }
+        }
 
         return $this;
     }

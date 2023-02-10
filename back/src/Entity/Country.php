@@ -27,9 +27,13 @@ class Country
     #[ORM\ManyToMany(targetEntity: Movie::class, mappedBy: 'countries')]
     private Collection $movies;
 
+    #[ORM\ManyToMany(targetEntity: Person::class, mappedBy: 'nationality')]
+    private Collection $people;
+
     public function __construct()
     {
         $this->movies = new ArrayCollection();
+        $this->people = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -95,6 +99,33 @@ class Country
     {
         if ($this->movies->removeElement($movie)) {
             $movie->removeCountry($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Person>
+     */
+    public function getPeople(): Collection
+    {
+        return $this->people;
+    }
+
+    public function addPerson(Person $person): self
+    {
+        if (!$this->people->contains($person)) {
+            $this->people->add($person);
+            $person->addNationality($this);
+        }
+
+        return $this;
+    }
+
+    public function removePerson(Person $person): self
+    {
+        if ($this->people->removeElement($person)) {
+            $person->removeNationality($this);
         }
 
         return $this;
