@@ -49,9 +49,13 @@ class Movie
     #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'movies')]
     private Collection $tags;
 
+    #[ORM\ManyToMany(targetEntity: Country::class, inversedBy: 'movies')]
+    private Collection $countries;
+
     public function __construct()
     {
         $this->tags = new ArrayCollection();
+        $this->countries = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -199,6 +203,30 @@ class Movie
     public function removeTag(Tag $tag): self
     {
         $this->tags->removeElement($tag);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Country>
+     */
+    public function getCountries(): Collection
+    {
+        return $this->countries;
+    }
+
+    public function addCountry(Country $country): self
+    {
+        if (!$this->countries->contains($country)) {
+            $this->countries->add($country);
+        }
+
+        return $this;
+    }
+
+    public function removeCountry(Country $country): self
+    {
+        $this->countries->removeElement($country);
 
         return $this;
     }
