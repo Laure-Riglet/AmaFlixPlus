@@ -18,12 +18,12 @@ class Tag
     #[ORM\Column(length: 25)]
     private ?string $name = null;
 
-    #[ORM\ManyToMany(targetEntity: Movie::class, mappedBy: 'tag')]
-    private Collection $movies;
+    #[ORM\ManyToMany(targetEntity: Production::class, mappedBy: 'tag')]
+    private Collection $productions;
 
     public function __construct()
     {
-        $this->movies = new ArrayCollection();
+        $this->productions = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -44,27 +44,27 @@ class Tag
     }
 
     /**
-     * @return Collection<int, Movie>
+     * @return Collection<int, Production>
      */
-    public function getMovies(): Collection
+    public function getProductions(): Collection
     {
-        return $this->movies;
+        return $this->productions;
     }
 
-    public function addMovie(Movie $movie): self
+    public function addProduction(Production $production): self
     {
-        if (!$this->movies->contains($movie)) {
-            $this->movies->add($movie);
-            $movie->addTag($this);
+        if (!$this->productions->contains($production)) {
+            $this->productions->add($production);
+            $production->addTag($this);
         }
 
         return $this;
     }
 
-    public function removeMovie(Movie $movie): self
+    public function removeProduction(Production $production): self
     {
-        if ($this->movies->removeElement($movie)) {
-            $movie->removeTag($this);
+        if ($this->productions->removeElement($production)) {
+            $production->removeTag($this);
         }
 
         return $this;

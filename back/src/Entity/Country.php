@@ -24,15 +24,15 @@ class Country
     #[ORM\Column(length: 255)]
     private ?string $flag = null;
 
-    #[ORM\ManyToMany(targetEntity: Movie::class, mappedBy: 'countries')]
-    private Collection $movies;
+    #[ORM\ManyToMany(targetEntity: Production::class, mappedBy: 'countries')]
+    private Collection $productions;
 
     #[ORM\ManyToMany(targetEntity: Person::class, mappedBy: 'nationality')]
     private Collection $people;
 
     public function __construct()
     {
-        $this->movies = new ArrayCollection();
+        $this->productions = new ArrayCollection();
         $this->people = new ArrayCollection();
     }
 
@@ -78,27 +78,27 @@ class Country
     }
 
     /**
-     * @return Collection<int, Movie>
+     * @return Collection<int, Production>
      */
-    public function getMovies(): Collection
+    public function getProductions(): Collection
     {
-        return $this->movies;
+        return $this->productions;
     }
 
-    public function addMovie(Movie $movie): self
+    public function addProduction(Production $production): self
     {
-        if (!$this->movies->contains($movie)) {
-            $this->movies->add($movie);
-            $movie->addCountry($this);
+        if (!$this->productions->contains($production)) {
+            $this->productions->add($production);
+            $production->addCountry($this);
         }
 
         return $this;
     }
 
-    public function removeMovie(Movie $movie): self
+    public function removeProduction(Production $production): self
     {
-        if ($this->movies->removeElement($movie)) {
-            $movie->removeCountry($this);
+        if ($this->productions->removeElement($production)) {
+            $production->removeCountry($this);
         }
 
         return $this;

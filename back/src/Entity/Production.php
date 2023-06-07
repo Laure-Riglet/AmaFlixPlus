@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\MovieRepository;
+use App\Repository\ProductionRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: MovieRepository::class)]
-class Movie
+#[ORM\Entity(repositoryClass: ProductionRepository::class)]
+class Production
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -46,13 +46,13 @@ class Movie
     #[ORM\Column(length: 255)]
     private ?string $trailer = null;
 
-    #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'movies')]
+    #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'productions')]
     private Collection $tags;
 
-    #[ORM\ManyToMany(targetEntity: Country::class, inversedBy: 'movies')]
+    #[ORM\ManyToMany(targetEntity: Country::class, inversedBy: 'productions')]
     private Collection $countries;
 
-    #[ORM\OneToMany(mappedBy: 'movie', targetEntity: Credit::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'production', targetEntity: Credit::class, orphanRemoval: true)]
     private Collection $credits;
 
     public function __construct()
@@ -247,7 +247,7 @@ class Movie
     {
         if (!$this->credits->contains($credit)) {
             $this->credits->add($credit);
-            $credit->setMovie($this);
+            $credit->setProduction($this);
         }
 
         return $this;
@@ -257,8 +257,8 @@ class Movie
     {
         if ($this->credits->removeElement($credit)) {
             // set the owning side to null (unless already changed)
-            if ($credit->getMovie() === $this) {
-                $credit->setMovie(null);
+            if ($credit->getProduction() === $this) {
+                $credit->setProduction(null);
             }
         }
 

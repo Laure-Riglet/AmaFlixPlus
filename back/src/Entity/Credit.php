@@ -15,7 +15,7 @@ class Credit
 
     #[ORM\ManyToOne(inversedBy: 'credits')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Movie $movie = null;
+    private ?Production $production = null;
 
     #[ORM\ManyToOne(inversedBy: 'credits')]
     #[ORM\JoinColumn(nullable: false)]
@@ -32,14 +32,14 @@ class Credit
         return $this->id;
     }
 
-    public function getMovie(): ?Movie
+    public function getProduction(): ?Production
     {
-        return $this->movie;
+        return $this->production;
     }
 
-    public function setMovie(?Movie $movie): self
+    public function setProduction(?Production $production): self
     {
-        $this->movie = $movie;
+        $this->production = $production;
 
         return $this;
     }

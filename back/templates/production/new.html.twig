@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Production{% endblock %}
+
+{% block body %}
+    <h1>Create new Production</h1>
+
+    {{ include('production/_form.html.twig') }}
+
+    <a href="{{ path('app_production_index') }}">back to list</a>
+
+    {% if searchResults is defined %}
+        {% for searchResult in searchResults.results  %}
+            <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2{{ searchResult.poster_path }}" alt="">
+            <ul>
+                    {% if searchResult.title is defined %}
+                    <li>{{ searchResult.title }}</li>
+                    {% elseif searchResult.name is defined %}
+                    <li>{{ searchResult.name }}</li>
+                    {% endif %}
+                    <li>{{ searchResult.overview }}</li>
+                    <li>{{ searchResult.media_type }}</li>
+                </ul>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
