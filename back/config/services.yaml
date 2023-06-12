@@ -25,3 +25,15 @@ services:
     App\Service\TmdbService:
         arguments:
             $apiToken: '%env(string:TMDB_API_TOKEN)%'
+
+    App\Service\OmdbService:
+        arguments:
+            $apiKey: '%env(string:OMDB_API_KEY)%'
+
+    App\Service\YoutubeService:
+        arguments:
+            $apiKey: '%env(string:YT_API_KEY)%'
+
+    App\Service\DeepLService:
+        arguments:
+            $apiKey: '%env(string:DEEPL_API_KEY)%'

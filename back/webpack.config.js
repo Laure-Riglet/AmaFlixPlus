@@ -22,7 +22,6 @@ Encore
      */
     .addEntry('app', './assets/app.js')
     .addEntry('bootstrap', './assets/bootstrap.js')
-    .addEntry('bootstrap.bundle.min', './assets/bootstrap.bundle.min.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

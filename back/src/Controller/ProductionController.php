@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Entity\Production;
 use App\Form\ProductionType;
 use App\Repository\ProductionRepository;
-use App\Service\TmdbService;
+use App\Service\ProductionRetrievalService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,7 +23,7 @@ class ProductionController extends AbstractController
     }
 
     #[Route('/new', name: 'app_production_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, TmdbService $tmdbService, ProductionRepository $productionRepository): Response
+    public function new(Request $request, ProductionRetrievalService $productionRetrievalService, ProductionRepository $productionRepository): Response
     {
         $production = new Production();
         $form = $this->createForm(ProductionType::class, $production);
@@ -36,8 +36,10 @@ class ProductionController extends AbstractController
         } */
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $title = $form->get('title')->getData();
-            $searchResults = $tmdbService->searchMatchingProductions($title);
+
+            $searchResults = $productionRetrievalService->search($title);
 
             return $this->renderForm('production/new.html.twig', [
                 'production' => $production,

@@ -1,8 +1,8 @@
 @import url(https://fonts.bunny.net/css?family=urbanist:200,400,600,900);
 body {
-	background-color: darkslategrey;
+	background-color: rgb(88, 152, 152);
 	font-family: 'urbanist', sans-serif;
-	font-weight: 200;
+	font-weight: 400;
 	font-size: 0.8rem;
-	color: #fff;
+	padding: 3rem;
 }
