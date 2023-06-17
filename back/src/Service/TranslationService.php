@@ -92,6 +92,11 @@ class TranslationService
         $this->deepLService = $deepLService;
     }
 
+    public function translate(string $text, string $source = 'EN', string $target = 'FR'): string
+    {
+        return $this->deepLService->translate($source, $target, $text);
+    }
+
     public function getFrenchCountryName(string $country): string
     {
         return $this->englishCountries[$country] ?? $this->deepLService->translate('EN', 'FR', $country);

@@ -52,7 +52,7 @@ class ProductionRetrievalService
                 'tmdb_id' => $rawTmdbResultDetails['id'],
                 'title' => $this->TextFormatService->upperFirstEachWord($rawTmdbSearchResult['title'] ?? $rawTmdbSearchResult['name']),
                 'original_title' => $this->TextFormatService->upperFirstEachWord($rawTmdbResultDetails['original_title'] ?? $rawTmdbResultDetails['original_name']),
-                'summary' => $rawTmdbSearchResult['overview'],
+                'summary' => $this->translationService->translate($rawTmdbSearchResult['overview']),
                 'release_date' => $rawTmdbResultDetails['release_date'] ?? $rawTmdbResultDetails['first_air_date'],
             ];
 
@@ -103,8 +103,8 @@ class ProductionRetrievalService
             $searchResult['country'] = $this->translationService->getFrenchCountryName($rawOmdbResultDetails['Country'] ?? '');
 
             if ($searchResult['country'] === '') {
-                if (isset($rawTmdbResultDetails['production_countries'][0]['iso_3166_1'])) {
-                    foreach ($rawTmdbResultDetails['production_countries'] as $productionCountry) {
+                if (isset($rawTmdbResultDetails['production_countries'][0])) {
+                    foreach ($rawTmdbResultDetails['production_countries'] as $key => $productionCountry) {
                         $searchResult['country'] .= $this->translationService->getFrenchCountryNameByIso($productionCountry['iso_3166_1']) . ', ';
                     }
                     $searchResult['country'] = substr($searchResult['country'], 0, -2);
