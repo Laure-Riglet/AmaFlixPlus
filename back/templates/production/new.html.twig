@@ -6,9 +6,16 @@
 {% block body %}
 	<h1>Ajouter un programme</h1>
 
-	{{ include('production/_form.html.twig') }}
 
-	<a href="{{ path('app_production_index') }}">retour à la liste</a>
+	<form action="" method="post">
+		<div class="form-floating mb-3">
+			<input type="text" required="required" name="title" placeholder="Titre du film" class="form-control">
+			<label class="form-label required">Titre</label>
+		</div>
+		<div class="d-flex justify-content-end mb-3">
+			<input type="submit" value="Rechercher" href="{{ path('app_production_new') }}" class="btn btn-primary">
+		</div>
+	</form>
 
 	{% if searchResults is defined %}
 		{# <div class="row row-cols-1 row-cols-md-2 g-4"> #}
@@ -56,9 +63,21 @@
 									</small>
 								</p>
 							</div>
-							<div class="d-flex justify-content-end" style="padding: 16px;">
-								<a href="#" class="btn btn-primary">Selectionner</a>
-							</div>
+							<form action="{{ path('app_production_add') }}" method="post">
+								<input type="hidden" name="selected_production[title]" value="{{ searchResult.title }}">
+								<input type="hidden" name="selected_production[original_title]" value="{{ searchResult.original_title }}">
+								<input type="hidden" name="selected_production[imdb_id]" value="{{ searchResult.imdb_id }}">
+								<input type="hidden" name="selected_production[media_type]" value="{{ searchResult.media_type }}">
+								<input type="hidden" name="selected_production[summary]" value="{{ searchResult.summary }}">
+								<input type="hidden" name="selected_production[poster_path]" value="{{ searchResult.poster_path }}">
+								<input type="hidden" name="selected_production[media_type]" value="{{ searchResult.media_type }}">
+								<input type="hidden" name="selected_production[release_date]" value="{{ searchResult.release_date }}">
+								<input type="hidden" name="selected_production[country]" value="{{ searchResult.country }}">
+								<input type="hidden" name="selected_production[tmdb_id]" value="{{ searchResult.tmdb_id }}">
+								<div class="d-flex justify-content-end" style="padding: 16px;">
+									<input type="submit" value="Selectionner" href="{{ path('app_production_add') }}" class="btn btn-primary">
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>

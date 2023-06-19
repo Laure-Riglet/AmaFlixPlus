@@ -6,6 +6,9 @@ use App\Entity\Production;
 use App\Form\ProductionType;
 use App\Repository\ProductionRepository;
 use App\Service\ProductionRetrievalService;
+use App\Service\TextFormatService;
+use DateTime;
+use DateTimeImmutable;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,33 +28,66 @@ class ProductionController extends AbstractController
     #[Route('/new', name: 'app_production_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ProductionRetrievalService $productionRetrievalService, ProductionRepository $productionRepository): Response
     {
-        $production = new Production();
-        $form = $this->createForm(ProductionType::class, $production);
-        $form->handleRequest($request);
+        $title = $request->request->get('title');
 
-        /* if ($form->isSubmitted() && $form->isValid()) {
-            $productionRepository->save($production, true);
-
-            return $this->redirectToRoute('app_production_index', [], Response::HTTP_SEE_OTHER);
-        } */
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $title = $form->get('title')->getData();
-
+        if ($title) {
             $searchResults = $productionRetrievalService->search($title);
-
             return $this->renderForm('production/new.html.twig', [
-                'production' => $production,
-                'form' => $form,
                 'searchResults' => $searchResults,
             ]);
         }
 
-        return $this->renderForm('production/new.html.twig', [
+        return $this->render('production/new.html.twig');
+    }
+
+    #[Route('/add', name: 'app_production_add', methods: ['GET', 'POST'])]
+    public function add(
+        Request $request,
+        TextFormatService $TextFormatService,
+        ProductionRepository $productionRepository
+    ): Response {
+        $selectedProduction = $request->request->get('selected_production');
+        $production = new Production();
+        if (isset($selectedProduction['title'])) {
+            $production->setTitle($selectedProduction['title'])
+                ->setOriginalTitle($selectedProduction['original_title'])
+                ->setSlug($TextFormatService->slugify($selectedProduction['title']))
+                ->setImdbId($selectedProduction['imdb_id'] ?? 'test')
+                ->setType($selectedProduction['media_type'] === 'movie' ? 'Film' : 'Série')
+                ->setReleaseDate(new DateTime($selectedProduction['release_date']))
+                ->setDuration($selectedProduction['duration'] ?? 77)
+                ->setTagline($selectedProduction['tagline'] ?? 'test')
+                ->setSynopsis($selectedProduction['summary'])
+                ->setRating($selectedProduction['rating'] ?? 0.1)
+                ->setPoster($selectedProduction['poster_path'] ?? 'test')
+                ->setBackdrop($selectedProduction['backdrop_path'] ?? 'test')
+                ->setTrailer($selectedProduction['trailer'] ?? 'test');
+        }
+
+        $form = $this->createForm(ProductionType::class, $production);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $productionRepository->save($production, true);
+
+            return $this->redirectToRoute('app_production_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('production/add.html.twig', [
             'production' => $production,
+            'selectedProduction' => $selectedProduction,
             'form' => $form,
         ]);
+    }
+
+    #[Route('/{id}/medias', name: 'app_production_medias', methods: ['POST'])]
+    public function medias(Request $request, Production $production, ProductionRepository $productionRepository): Response
+    {
+        $medias = $request->request->all();
+        //$production->setMedias($medias);
+        $productionRepository->save($production, true);
+
+        return $this->redirectToRoute('app_production_index', [], Response::HTTP_SEE_OTHER);
     }
 
     #[Route('/{id}', name: 'app_production_show', methods: ['GET'])]

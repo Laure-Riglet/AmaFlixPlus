@@ -1,53 +1,60 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Production index{% endblock %}
+{% block title %}Production index
+{% endblock %}
 
 {% block body %}
-    <h1>Production index</h1>
+	<h1>Production index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Type</th>
-                <th>Release_date</th>
-                <th>Duration</th>
-                <th>Tagline</th>
-                <th>Synopsis</th>
-                <th>Rating</th>
-                <th>Poster</th>
-                <th>Backdrop</th>
-                <th>Trailer</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for production in productions %}
-            <tr>
-                <td>{{ production.id }}</td>
-                <td>{{ production.title }}</td>
-                <td>{{ production.type }}</td>
-                <td>{{ production.releaseDate ? production.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ production.duration }}</td>
-                <td>{{ production.tagline }}</td>
-                <td>{{ production.synopsis }}</td>
-                <td>{{ production.rating }}</td>
-                <td>{{ production.poster }}</td>
-                <td>{{ production.backdrop }}</td>
-                <td>{{ production.trailer }}</td>
-                <td>
-                    <a href="{{ path('app_production_show', {'id': production.id}) }}">show</a>
-                    <a href="{{ path('app_production_edit', {'id': production.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="12">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Title</th>
+				<th>Original title</th>
+				<th>Slug</th>
+				<th>IMDB id</th>
+				<th>Type</th>
+				<th>Release_date</th>
+				<th>Duration</th>
+				<th>Tagline</th>
+				<th>Synopsis</th>
+				<th>Rating</th>
+				<th>Poster</th>
+				<th>Backdrop</th>
+				<th>Trailer</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for production in productions %}
+				<tr>
+					<td>{{ production.id }}</td>
+					<td>{{ production.title }}</td>
+					<td>{{ production.originalTitle }}</td>
+					<td>{{ production.slug }}</td>
+					<td>{{ production.imdbId }}</td>
+					<td>{{ production.type }}</td>
+					<td>{{ production.releaseDate ? production.releaseDate|date('d/m/Y') : '' }}</td>
+					<td>{{ production.duration }}</td>
+					<td>{{ production.tagline }}</td>
+					<td>{{ production.synopsis }}</td>
+					<td>{{ production.rating }}</td>
+					<td>{{ production.poster }}</td>
+					<td>{{ production.backdrop }}</td>
+					<td>{{ production.trailer }}</td>
+					<td>
+						<a href="{{ path('app_production_show', {'id': production.id}) }}">show</a>
+						<a href="{{ path('app_production_edit', {'id': production.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="12">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 
-    <a href="{{ path('app_production_new') }}">Create new</a>
+	<a href="{{ path('app_production_new') }}">Create new</a>
 {% endblock %}

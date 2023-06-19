@@ -2,10 +2,17 @@
 
 namespace App\Service;
 
-use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class TextFormatService
 {
+    private $slugger;
+
+    public function __construct(SluggerInterface $slugger)
+    {
+        $this->slugger = $slugger;
+    }
+
     public function upperFirstEachWord(string $text): string
     {
         $text = strtolower($text);
@@ -50,11 +57,16 @@ class TextFormatService
             }
         }
 
-        return $formattedText;
+        return trim($formattedText);
     }
 
     public function upperFirst(string $text): string
     {
         return ucfirst($text);
+    }
+
+    public function slugify(string $text): string
+    {
+        return $this->slugger->slug($text)->lower();
     }
 }

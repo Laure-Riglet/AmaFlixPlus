@@ -19,11 +19,20 @@ class Production
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $original_title = null;
+
+    #[ORM\Column(length: 300)]
+    private ?string $slug = null;
+
+    #[ORM\Column(length: 12, nullable: true)]
+    private ?string $imdb_id = null;
+
     #[ORM\Column(length: 50)]
     private ?string $type = null;
 
     #[ORM\Column]
-    private ?\DateTimeImmutable $release_date = null;
+    private ?\DateTime $release_date = null;
 
     #[ORM\Column]
     private ?int $duration = null;
@@ -91,12 +100,12 @@ class Production
         return $this;
     }
 
-    public function getReleaseDate(): ?\DateTimeImmutable
+    public function getReleaseDate(): ?\DateTime
     {
         return $this->release_date;
     }
 
-    public function setReleaseDate(\DateTimeImmutable $release_date): self
+    public function setReleaseDate(\DateTime $release_date): self
     {
         $this->release_date = $release_date;
 
@@ -261,6 +270,42 @@ class Production
                 $credit->setProduction(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getOriginalTitle(): ?string
+    {
+        return $this->original_title;
+    }
+
+    public function setOriginalTitle(string $original_title): self
+    {
+        $this->original_title = $original_title;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getImdbId(): ?string
+    {
+        return $this->imdb_id;
+    }
+
+    public function setImdbId(?string $imdb_id): self
+    {
+        $this->imdb_id = $imdb_id;
 
         return $this;
     }
